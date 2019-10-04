@@ -1,5 +1,5 @@
 import React from "react";
-import nav from "./components/nav";
+import Nav from "./components/nav";
 import axios from "axios";
 import MainCard from "./components/playerCard";
 import PlayersCard from "./components/card";
@@ -24,7 +24,7 @@ class App extends React.Component {
     // console.log(res.data);
     return (
       <div>
-        <nav />
+        <Nav />
         <PlayersCard data={this.state.data} />
         {this.state.data.map(user => (
           <MainCard key={user.id} data={user} />

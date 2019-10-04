@@ -1,7 +1,7 @@
 import React from "react";
-import { useDarkMode } from "../hooks/usedark";
+ import { useDarkMode } from "../hooks/usedark";
 
-export default function nav() {
+export default function Nav() {
   const [darkMode, setDarkMode] = useDarkMode(false);
 
   const toggleMode = e => {
