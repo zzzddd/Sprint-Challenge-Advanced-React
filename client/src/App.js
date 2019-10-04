@@ -1,13 +1,12 @@
 import React from "react";
-
+import styled, { createGlobalStyle } from "styled-components";
 import axios from "axios";
-
+import MainCard from "./components/playerCard";
+import PlayersCard from "./components/card";
 
 class App extends React.Component {
   state = {
-    data: "",
-    user: "zzzddd",
-    followers: []
+    data:[],
   };
 
   componentDidMount() {
@@ -22,10 +21,13 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("Followers", this.state.followers);
+    // console.log(res.data);
     return (
       <div>
-       dataheare
+        <PlayersCard data={this.state.data} />
+        {this.state.data.map(user => (
+          <MainCard key={user.id} data={user} />
+        ))}
       </div>
     );
   }
